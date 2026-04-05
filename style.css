@@ -1,59 +1,83 @@
 body{
-font-family:Arial, sans-serif;
-margin:0;
-background:#f2f5f9;
-text-align:center;
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f5f7fa;
+    color:#333;
 }
 
-header{
-background:linear-gradient(135deg,#4f8cff,#2c5dd8);
-color:white;
-padding:50px 20px;
+.site-header{
+    background: linear-gradient(135deg,#4f8cff,#2c5dd8);
+    color:white;
+    padding:60px 20px;
+    text-align:center;
 }
 
-h1{
-margin:0;
-font-size:40px;
+.site-header h1{
+    margin:0;
+    font-size:42px;
+}
+
+.site-header p{
+    font-size:18px;
+    margin-top:10px;
 }
 
 .intro{
-margin:40px 0;
+    margin:40px 0;
+    text-align:center;
 }
 
-.buttons{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:20px;
+.categories{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap:20px;
+    padding:20px;
 }
 
-.btn{
-display:inline-block;
-padding:20px 40px;
-font-size:18px;
-color:white;
-text-decoration:none;
-border-radius:10px;
-transition:0.3s;
-box-shadow:0 5px 10px rgba(0,0,0,0.15);
+.category{
+    display:block;
+    padding:25px;
+    border-radius:12px;
+    color:white;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Couleurs des boutons */
+.category h3{
+    margin-top:0;
+    margin-bottom:10px;
+}
 
+.category p{
+    margin:0;
+}
+
+.category:hover{
+    transform: translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Couleurs par catégorie */
 .fle{background:#5b8def;}
 .emploi{background:#27ae60;}
 .handicap{background:#9b59b6;}
-.admin{background:#f39c12;}
+.demarches{background:#f39c12;}
 .outils{background:#e74c3c;}
 
-.btn:hover{
-transform:scale(1.05);
-opacity:0.9;
+footer{
+    margin-top:50px;
+    padding:20px;
+    background:#eaeaea;
+    text-align:center;
+    font-size:14px;
 }
 
-footer{
-margin-top:50px;
-padding:20px;
-background:#eaeaea;
+footer a{
+    color:#2c5dd8;
+    text-decoration:none;
+}
+
+footer a:hover{
+    text-decoration:underline;
 }
