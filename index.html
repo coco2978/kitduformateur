@@ -1,51 +1,108 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<title>Ressources pour formateurs</title>
-<link rel="stylesheet" href="style.css">
-</head>
+/* Styles généraux */
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f5f7fa;
+    color:#333;
+}
 
-<body>
+a{
+    text-decoration:none;
+}
 
-<header class="site-header">
-    <h1>Ressources pour formateurs</h1>
-    <p>Un portail de liens utiles pour accompagner les apprenants</p>
-</header>
+/* Header */
+.site-header{
+    background: linear-gradient(135deg,#4f8cff,#2c5dd8);
+    color:white;
+    padding:60px 20px;
+    text-align:center;
+}
 
-<main>
-<section class="intro">
-    <h2>Choisissez une catégorie</h2>
-    <p>Accédez rapidement aux ressources classées par thème.</p>
-</section>
+.site-header h1{
+    margin:0;
+    font-size:42px;
+}
 
-<section class="categories">
-    <a href="fle.html" class="category fle">
-        <h3>FLE</h3>
-        <p>Apprendre et enseigner le français</p>
-    </a>
-    <a href="emploi.html" class="category emploi">
-        <h3>Emploi</h3>
-        <p>Sites de recherche d’emploi et stages</p>
-    </a>
-    <a href="handicap.html" class="category handicap">
-        <h3>Handicap</h3>
-        <p>Informations et aides disponibles</p>
-    </a>
-    <a href="demarches.html" class="category demarches">
-        <h3>Démarches</h3>
-        <p>Sites administratifs utiles</p>
-    </a>
-    <a href="outils.html" class="category outils">
-        <h3>Outils pédagogiques</h3>
-        <p>Ressources pour les formateurs</p>
-    </a>
-</section>
-</main>
+.site-header p{
+    font-size:18px;
+    margin-top:10px;
+}
 
-<footer>
-    <p>© 2026 - Portail ressources formateurs | <a href="mentions.html">Mentions légales</a> | Tél : 06 60 06 04 67</p>
-</footer>
+/* Section intro */
+.intro{
+    margin:40px 0;
+    text-align:center;
+}
 
-</body>
-</html>
+/* Grille des catégories */
+.categories{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+/* Cartes / Boutons colorés */
+.category{
+    display:block;
+    padding:30px 20px;
+    border-radius:12px;
+    color:white;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+    text-align:center;
+}
+
+.category h3{
+    margin-top:0;
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.category p{
+    margin:0;
+    font-size:14px;
+}
+
+/* Effet au survol */
+.category:hover{
+    transform: translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+    filter: brightness(1.1);
+}
+
+/* Couleurs des catégories */
+.fle{background:#5b8def;}
+.emploi{background:#27ae60;}
+.handicap{background:#9b59b6;}
+.demarches{background:#f39c12;}
+.outils{background:#e74c3c;}
+
+/* Footer */
+footer{
+    margin-top:50px;
+    padding:20px;
+    background:#eaeaea;
+    text-align:center;
+    font-size:14px;
+}
+
+footer a{
+    color:#2c5dd8;
+    text-decoration:none;
+}
+
+footer a:hover{
+    text-decoration:underline;
+}
+
+/* Responsive amélioré */
+@media(max-width:600px){
+    .site-header h1{
+        font-size:32px;
+    }
+    .category{
+        padding:25px 15px;
+    }
+}
