@@ -28,6 +28,16 @@ a{
     margin-top:10px;
 }
 
+/* Lien du titre vers l'accueil */
+.site-title{
+    color:white;
+    text-decoration:none;
+}
+
+.site-title:hover{
+    text-decoration:underline;
+}
+
 /* Section intro */
 .intro{
     margin:40px 0;
@@ -105,15 +115,4 @@ footer a:hover{
     .category{
         padding:25px 15px;
     }
-/* Lien du titre vers l'accueil */
-
-.site-title{
-    color:white;
-    text-decoration:none;
-}
-
-.site-title:hover{
-    text-decoration:underline;
-}
-}
 }
