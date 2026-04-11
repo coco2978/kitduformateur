@@ -122,4 +122,7 @@ color:#2c5dd8;
 .main-nav a:hover{
 text-decoration:underline;
 }
+    .main-nav .active{
+color:#e74c3c;
+}
 }
