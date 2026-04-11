@@ -105,22 +105,21 @@ footer a:hover{
     .category{
         padding:25px 15px;
     }
-    /* Bouton retour accueil */
-.nav-home{
-  text-align:center;
-  margin:20px;
+/* Menu de navigation */
+.main-nav{
+background:#ffffff;
+padding:15px;
+text-align:center;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
-.nav-home a{
-  display:inline-block;
-  background:#2c5dd8;
-  color:white;
-  padding:10px 20px;
-  border-radius:8px;
-  font-weight:bold;
+.main-nav a{
+margin:0 15px;
+font-weight:bold;
+color:#2c5dd8;
 }
 
-.nav-home a:hover{
-  background:#1b3fa8;
+.main-nav a:hover{
+text-decoration:underline;
 }
 }
