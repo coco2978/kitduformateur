@@ -105,5 +105,23 @@ footer a:hover{
     .category{
         padding:25px 15px;
     }
+    /* Bouton retour accueil */
+.nav-home{
+  text-align:center;
+  margin:20px;
+}
+
+.nav-home a{
+  display:inline-block;
+  background:#2c5dd8;
+  color:white;
+  padding:10px 20px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.nav-home a:hover{
+  background:#1b3fa8;
+}
 }
 
