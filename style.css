@@ -143,4 +143,35 @@ footer a:hover{
     .category{
         padding:25px 15px;
     }
+    /* Tableau annuaire */
+
+.annuaire-table{
+width:90%;
+margin:40px auto;
+border-collapse:collapse;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.annuaire-table th,
+.annuaire-table td{
+padding:10px;
+border:1px solid #ddd;
+text-align:left;
+}
+
+.annuaire-table th{
+background:#2c5dd8;
+color:white;
+}
+
+.annuaire-table tr:nth-child(even){
+background:#f2f4f8;
+}
+
+.annuaire-table input{
+width:95%;
+padding:4px;
+margin-top:5px;
+}
 }
