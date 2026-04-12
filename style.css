@@ -80,25 +80,32 @@ a{
 .outils{background:#e74c3c;}
 
 /* Menu de navigation */
+/* Menu de navigation moderne */
 .main-nav{
     background:#ffffff;
-    padding:15px;
+    padding:12px;
     text-align:center;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
 .main-nav a{
-    margin:0 15px;
+    display:inline-block;
+    margin:5px;
+    padding:8px 16px;
+    border-radius:6px;
     font-weight:bold;
     color:#2c5dd8;
+    transition:background 0.3s, color 0.3s;
 }
 
 .main-nav a:hover{
-    text-decoration:underline;
+    background:#2c5dd8;
+    color:white;
 }
 
 .main-nav .active{
-    color:#e74c3c;
+    background:#e74c3c;
+    color:white;
 }
 
 /* Footer */
