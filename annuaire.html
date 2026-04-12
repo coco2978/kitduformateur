@@ -59,15 +59,17 @@
 
 <tbody></tbody>
 </table>
-
 <script>
+
 fetch("contacts.csv")
 .then(r => r.text())
 .then(data => {
+
 let rows = data.split("\n").slice(1);
 let tbody = document.querySelector("tbody");
 
 rows.forEach(row => {
+
 if(row.trim() === "") return;
 
 let cols = row.split(",");
@@ -80,17 +82,31 @@ tr.appendChild(td);
 });
 
 tbody.appendChild(tr);
-});
+
 });
 
-function searchTable(){
-let input = document.getElementById("searchInput").value.toLowerCase();
+});
+
+function filterTable(col){
+
+let input = document.querySelectorAll("thead input")[col];
+let filter = input.value.toLowerCase();
 let rows = document.querySelectorAll("tbody tr");
 
-rows.forEach(r => {
-r.style.display = r.textContent.toLowerCase().includes(input) ? "" : "none";
-});
+rows.forEach(row => {
+
+let cell = row.children[col];
+
+if(cell.textContent.toLowerCase().includes(filter)){
+row.style.display="";
+}else{
+row.style.display="none";
 }
+
+});
+
+}
+
 </script>
 
 <footer>
