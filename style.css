@@ -23,7 +23,7 @@ a{
     font-size:42px;
 }
 
-.site-header p{
+-header p{
     font-size:18px;
     margin-top:10px;
 }
@@ -32,6 +32,14 @@ a{
 .intro{
     margin:40px 0;
     text-align:center;
+}
+.site-title{
+    color:white;
+    text-decoration:none;
+}
+
+.site-title:hover{
+    text-decoration:underline;
 }
 
 /* Grille des catégories */
