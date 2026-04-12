@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Annuaire</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header class="site-header">
+<h1><a href="index.html" class="site-title">Annuaire des contacts</a></h1>
+<p>Recherche rapide des contacts utiles</p>
+</header>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Rechercher..." onkeyup="searchTable()">
+</div>
+
+<table id="table">
+<thead>
+<tr>
+<th>Structure</th>
+<th>Contact</th>
+<th>Téléphone</th>
+<th>Email</th>
+<th>Ville</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+</table>
+
+<script>
+fetch("contacts.csv")
+.then(r => r.text())
+.then(data => {
+let rows = data.split("\n").slice(1);
+let tbody = document.querySelector("tbody");
+
+rows.forEach(row => {
+if(row.trim() === "") return;
+
+let cols = row.split(",");
+let tr = document.createElement("tr");
+
+cols.forEach(c => {
+let td = document.createElement("td");
+td.textContent = c;
+tr.appendChild(td);
+});
+
+tbody.appendChild(tr);
+});
+});
+
+function searchTable(){
+let input = document.getElementById("searchInput").value.toLowerCase();
+let rows = document.querySelectorAll("tbody tr");
+
+rows.forEach(r => {
+r.style.display = r.textContent.toLowerCase().includes(input) ? "" : "none";
+});
+}
+</script>
+
+<footer>
+<p>© 2026 - Portail ressources formateurs | <a href="mentions.html">Mentions légales</a></p>
+</footer>
+
+</body>
+</html>
