@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <title>Annuaire</title>
 <link rel="stylesheet" href="style.css">
+
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
+
 </head>
+
+<body>
+
 <nav class="main-nav">
 <a href="index.html">Accueil</a>
 <a href="fle.html">FLE</a>
@@ -15,22 +21,20 @@
 <a href="outils.html">Outils pédagogiques</a>
 <a href="annuaire.html" class="active">Annuaire</a>
 </nav>
-<body>
 
 <header class="site-header">
 <a href="index.html" class="site-title">
-    <h1>Annuaire des contacts</h1>
+<h1>Annuaire des contacts</h1>
 </a>
-  <p>Recherche rapide des contacts utiles</p>
+<p>Recherche rapide des contacts utiles</p>
 </header>
 
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Rechercher..." onkeyup="searchTable()">
-</div>
+<main>
 
-<table id="table" class="annuaire-table">
+<table class="annuaire-table">
 
 <thead>
+
 <tr>
 <th>Catégorie<br><input type="text" onkeyup="filterTable(0)" placeholder="Filtrer"></th>
 <th>Adresse<br><input type="text" onkeyup="filterTable(1)" placeholder="Filtrer"></th>
@@ -40,29 +44,25 @@
 <th>Email<br><input type="text" onkeyup="filterTable(5)" placeholder="Filtrer"></th>
 <th>Commentaire<br><input type="text" onkeyup="filterTable(6)" placeholder="Filtrer"></th>
 </tr>
+
 </thead>
 
-<tbody></tbody>
+<tbody>
+</tbody>
 
 </table>
-<thead>
-<tr>
-<th>Catégorie</th>
-<th>Adresse</th>
-<th>CP</th>
-<th>Ville</th>
-<th>Tel</th>
-<th>Courriel</th>
-<th>Commentaire</th>
-</tr>
-</thead>
 
-<tbody></tbody>
-</table>
+</main>
+
+<footer>
+<p>© 2026 - Portail ressources formateurs |
+<a href="mentions.html">Mentions légales</a></p>
+</footer>
+
 <script>
 
 fetch("contacts.csv")
-.then(r => r.text())
+.then(response => response.text())
 .then(data => {
 
 let rows = data.split("\n").slice(1);
@@ -75,10 +75,12 @@ if(row.trim() === "") return;
 let cols = row.split(",");
 let tr = document.createElement("tr");
 
-cols.forEach(c => {
+cols.forEach(col => {
+
 let td = document.createElement("td");
-td.textContent = c;
+td.textContent = col;
 tr.appendChild(td);
+
 });
 
 tbody.appendChild(tr);
@@ -98,9 +100,9 @@ rows.forEach(row => {
 let cell = row.children[col];
 
 if(cell.textContent.toLowerCase().includes(filter)){
-row.style.display="";
+row.style.display = "";
 }else{
-row.style.display="none";
+row.style.display = "none";
 }
 
 });
@@ -108,10 +110,6 @@ row.style.display="none";
 }
 
 </script>
-
-<footer>
-<p>© 2026 - Portail ressources formateurs | <a href="mentions.html">Mentions légales</a></p>
-</footer>
 
 </body>
 </html>
