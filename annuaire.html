@@ -28,7 +28,23 @@
 <input type="text" id="searchInput" placeholder="Rechercher..." onkeyup="searchTable()">
 </div>
 
-<table id="table">
+<table id="table" class="annuaire-table">
+
+<thead>
+<tr>
+<th>Catégorie<br><input type="text" onkeyup="filterTable(0)" placeholder="Filtrer"></th>
+<th>Adresse<br><input type="text" onkeyup="filterTable(1)" placeholder="Filtrer"></th>
+<th>CP<br><input type="text" onkeyup="filterTable(2)" placeholder="Filtrer"></th>
+<th>Ville<br><input type="text" onkeyup="filterTable(3)" placeholder="Filtrer"></th>
+<th>Téléphone<br><input type="text" onkeyup="filterTable(4)" placeholder="Filtrer"></th>
+<th>Email<br><input type="text" onkeyup="filterTable(5)" placeholder="Filtrer"></th>
+<th>Commentaire<br><input type="text" onkeyup="filterTable(6)" placeholder="Filtrer"></th>
+</tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
 <thead>
 <tr>
 <th>Catégorie</th>
