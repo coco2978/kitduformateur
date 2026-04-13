@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
 <nav class="main-nav">
 <a href="index.html">Accueil</a>
 <a href="fle.html">FLE</a>
@@ -29,10 +30,9 @@
 
 <main>
 
-<table class="annuaire-table">
+<table id="annuaire" class="annuaire-table">
 
 <thead>
-
 <tr>
 <th>Catégorie<br><input type="text" onkeyup="filterTable(0)" placeholder="Filtrer"></th>
 <th>Adresse<br><input type="text" onkeyup="filterTable(1)" placeholder="Filtrer"></th>
@@ -42,7 +42,6 @@
 <th>Email<br><input type="text" onkeyup="filterTable(5)" placeholder="Filtrer"></th>
 <th>Commentaire<br><input type="text" onkeyup="filterTable(6)" placeholder="Filtrer"></th>
 </tr>
-
 </thead>
 
 <tbody>
@@ -64,11 +63,12 @@ fetch("contacts.csv")
 .then(data => {
 
 let rows = data.split("\n").slice(1);
-let tbody = document.querySelector("tbody");
+let tbody = document.querySelector("#annuaire tbody");
 
 rows.forEach(row => {
 
-if(row.trim() === "") return;
+row = row.trim();
+if(row === "") return;
 
 let cols = row.split(",");
 let tr = document.createElement("tr");
@@ -76,7 +76,7 @@ let tr = document.createElement("tr");
 cols.forEach(col => {
 
 let td = document.createElement("td");
-td.textContent = col;
+td.textContent = col.trim();
 tr.appendChild(td);
 
 });
@@ -91,7 +91,7 @@ function filterTable(col){
 
 let input = document.querySelectorAll("thead input")[col];
 let filter = input.value.toLowerCase();
-let rows = document.querySelectorAll("tbody tr");
+let rows = document.querySelectorAll("#annuaire tbody tr");
 
 rows.forEach(row => {
 
